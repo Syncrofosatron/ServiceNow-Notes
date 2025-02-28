@@ -162,8 +162,10 @@ Email properties -> By default disabled email rec/transm.
 Calling scripts from notifications.
 Go to notifications -> find a script?
 
-Format is - ${mail_script:get_all_records}
-
+Format is - 
+```javascript
+${mail_script:get_all_records}
+```
 
 -----
 18.01.024
@@ -194,6 +196,7 @@ Right click on incidents, client script, and then write.
 name - OnChange Caller.
 
 Script field -
+```javascript
 var caller = g_form.getValue("caller_id");
 if (caller == sys_id of chosen caller)
 {
@@ -205,7 +208,7 @@ else
     g_form.setMandatory("assisgnment_group", false);
     g_form.setMandatory("assigned_to", false);
 }
-
+```
 If field is a reference type (referening to other table), then we need
 sys_id of that record, and not reference type.
 Right click, copy sys_id.
@@ -214,7 +217,7 @@ Above, we can replace caller with newValue as well. :0 :x :!
 
 onSubmit -
 If either of below is empty, then no submission allowed.
-
+```javascript
 var assgrp = g_form.getValue("assignment_group");
 var assto = g_form.getValue("assignment_to");
 if (assgrp == "" || assto == "")
@@ -238,7 +241,7 @@ if (assgrp == "" || assto == "")
          g_form.showFieldMsg("assignment_to", "assignment to is mandatory");   
     }
 }
-
+```
 Catalog client items scripts - There we can also write client scripts.
 
 Client script, omLoad and using g_user instead of g_form.

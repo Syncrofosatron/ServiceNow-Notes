@@ -17,3 +17,4 @@ MyIncidentUtils.prototype = {
 
     type: 'MyIncidentUtils'
 };
+
